@@ -20,7 +20,7 @@
 				</md-content>
 					
 				<!-- {{todoChecked}}
-				{{todoList}} -->
+				{{todo}} -->
 				<br>
 				<md-divider style='margin-left: 25%; width: 50%;'></md-divider>
 
@@ -120,6 +120,10 @@ export default {
 				this.todoTitles.unshift(this.todoText);
 				this.todoStates.unshift(0);
 				this.todoText = ''
+				for (let i = 0; i < this.todoChecked.length; i++) {
+					this.todoChecked[i] += 1
+					this.updateTodoClicked()
+				}
 
 				let a = this.todoTitles.join('//')
 				let b = this.todoStates.join('//')
